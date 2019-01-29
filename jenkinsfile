@@ -3,9 +3,10 @@ pipeline {
     stages {
         stage('example') {
             steps {
-                
+                sh '''
                 message=$( curl 'http://localhost:8080' )
                 echo "Hello $message"
+                '''
                 
             }
         }
