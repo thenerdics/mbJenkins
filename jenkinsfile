@@ -5,7 +5,7 @@ pipeline {
             steps {
                 sh '''
                 message=$( curl 'http://localhost:8080' )
-                echo "Hello $message"
+                echo "Hello $JOB_NAME"
                 '''
                 
             }
