@@ -3,7 +3,26 @@ pipeline {
     stages {
         stage('Example') {
             steps {
-                echo 'Hello World'
+               curl localhost:8080/job | grep -i "error"
+               echo "curled local host"
+            }
+        }
+        stage('pipeline'){
+            pipeline {
+                agent any
+                stages {
+                    stage('Example') {
+                        steps {
+                        curl localhost:8080/job | grep -i "error"
+                        echo "curled local host"
+                        }
+                    }
+                }
+                post { 
+                    always { 
+                        echo 'I will always say Hello again!'
+                    }
+                }
             }
         }
     }
