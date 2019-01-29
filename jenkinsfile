@@ -9,8 +9,8 @@ pipeline {
         }
     }
     post {
-                always {
-                    echo "Always post this"
-                }
-            }
+        always {
+            echo "Always post this"
+        }
+    }
 }
