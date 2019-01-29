@@ -2,10 +2,10 @@ pipeline {
     agent any
     stages {
         stage('Stage Example') {
-            steps {
-               sh 'curl localhost:8080/job '
-               echo "curled local host"
-            }
+             git(
+                url: 'git@github.com:thenerdics/mbJenkins.git',
+                branch: "piepelineStages"
+            )
         }
         stage('Steps Example'){
             steps {
