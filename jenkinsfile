@@ -1,4 +1,4 @@
-def message = "mani is the best"
+def message = "mani test"
 
 pipeline {
     agent any
