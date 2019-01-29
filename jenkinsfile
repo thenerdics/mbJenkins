@@ -1,6 +1,6 @@
 job('example') {
     scm {
-        github('thenerdics/mbJenkins', 'pipelineStages')
+        github('https://github.com/thenerdics/mbJenkins', 'pipelineStages')
     }
     triggers {
         githubPush()
