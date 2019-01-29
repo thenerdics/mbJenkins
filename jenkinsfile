@@ -1,4 +1,4 @@
-job('example') {
+stage('example') {
     // scm {
     //     github('https://github.com/thenerdics/mbJenkins', 'pipelineStages')
     // }
