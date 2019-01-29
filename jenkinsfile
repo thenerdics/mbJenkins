@@ -8,9 +8,8 @@ pipeline {
                 sh '''
                 message=$( curl 'http://localhost:8080' )
                 echo "Hello $JOB_NAME"
-                ./test.sh "${message}"
                 '''
-                
+                ./test.sh "${message}"
             }
         }
     }
