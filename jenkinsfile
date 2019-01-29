@@ -9,7 +9,8 @@ pipeline {
                 message=$( curl 'http://localhost:8080' )
                 echo "Hello $JOB_NAME"
                 '''
-                ./test.sh "${message}"
+                "echo $message"
+                "./test.sh $message"
             }
         }
     }
