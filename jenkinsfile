@@ -13,10 +13,12 @@ pipeline {
             }
         }
         stage('pass the message'){
-            try {
-                sh "./test.sh ${env.message}"
-            } catch(e) {
-                println "${e}"
+            steps {
+                try {
+                    sh "./test.sh ${env.message}"
+                } catch(e) {
+                    println "${e}"
+                }
             }
         }
     }
