@@ -14,11 +14,7 @@ pipeline {
         }
         stage('pass the message'){
             steps {
-                try {
                     sh "./test.sh ${env.message}"
-                } catch(e) {
-                    println "${e}"
-                }
             }
         }
     }
