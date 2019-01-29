@@ -9,9 +9,14 @@ pipeline {
                 message=$( curl 'http://localhost:8080' )
                 echo "Hello $JOB_NAME"
                 message=$(message)
-                sh "./test.sh ${message}"
                 '''
-                
+            }
+        }
+        stage('pass the message'){
+            try {
+                sh "./test.sh ${env.message}"
+            } catch(e) {
+                println "${e}"
             }
         }
     }
