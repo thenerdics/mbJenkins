@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Stage Example') {
             steps {
-               sh 'curl localhost:8080/job | grep -i "error"'
+               sh 'curl localhost:8080/job '
                echo "curled local host"
             }
         }
