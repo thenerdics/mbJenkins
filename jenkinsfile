@@ -1,6 +1,7 @@
 job('example') {
-    logRotator(-1, 10)
-    jdk('Java 6')
+    scm {
+        github('thenerdics/mbJenkins', 'pipelineStages')
+    }
     triggers {
         githubPush()
     }
