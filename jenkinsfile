@@ -1,15 +1,16 @@
 pipeline {
     agent any
     stages {
-        job('example') {
+        stage('example') {
             steps {
                 echo "Hello World"
             }
-            post {
+            
+        }
+    }
+    post {
                 always {
                     echo "Always post this"
                 }
             }
-        }
-    }
 }
