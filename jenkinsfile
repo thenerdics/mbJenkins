@@ -1,4 +1,4 @@
-def message = "mani test"
+def message = "mani-*"
 
 pipeline {
     agent any
