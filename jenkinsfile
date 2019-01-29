@@ -1,10 +1,10 @@
 stage('example') {
-    // scm {
-    //     github('https://github.com/thenerdics/mbJenkins', 'pipelineStages')
-    // }
-    // triggers {
-    //     githubPush()
-    // }
+    scm {
+        github('https://github.com/thenerdics/mbJenkins', 'pipelineStages')
+    }
+    triggers {
+        githubPush()
+    }
     steps {
         echo "Hello World"
     }
