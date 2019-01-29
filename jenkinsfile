@@ -3,9 +3,11 @@ pipeline {
     stages {
         stage('example') {
             steps {
-                echo "Hello World"
+                sh """
+                message=$( curl localhost:8080 )
+                echo "Hello $message"
+                """
             }
-            
         }
     }
     post {
