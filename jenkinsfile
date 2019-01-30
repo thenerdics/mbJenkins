@@ -10,11 +10,12 @@ pipeline {
                 echo "Hello $JOB_NAME"
                 message="Hello $JOB_NAME"
                 '''
+                def env.mess = env.message
             }
         }
         stage('pass the message'){
             steps {
-                    sh "./test.sh $env.message"
+                    sh "./test.sh $env.mess"
             }
         }
     }
