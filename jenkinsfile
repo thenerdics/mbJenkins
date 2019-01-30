@@ -14,7 +14,7 @@ pipeline {
         }
         stage('pass the message'){
             steps {
-                    sh "./test.sh $message"
+                    sh "./test.sh $env.message"
             }
         }
     }
