@@ -2,11 +2,14 @@
 
 pipeline {
     agent any
-    stage('first') {
-        steps {
-            sh'''
-            ls
-            '''
+    stages {
+            stage('first') {
+            steps {
+                sh'''
+                ls
+                '''
+            }
         }
     }
+    
 }
