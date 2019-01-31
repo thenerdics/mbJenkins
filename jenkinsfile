@@ -1,16 +1,10 @@
+#!/usr/bin/env groovy
 
-
-
-   stage('checkout') {
-       steps {
-            git credentialsId: 'jenkins', 
-                url: 'git@git.xxx.com:jianjing/jenkinspipeline.git',
-                branch: "test" 
+pipelineJob('example') {
+    definition {
+        cps {
+            script(readFileFromWorkspace('project-a-workflow.groovy'))
+            sandbox()
         }
     }
-
-    stage('test') {
-        steps {
-            sh "echo ${GIT_BRANCH}"
-        }
-    }       
+}
