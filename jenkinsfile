@@ -13,7 +13,7 @@ pipeline {
         stage('TEST') {
             steps {
                 sh'''
-                ./test.sh "mani"
+                ./test.sh &{env.name}
                 '''
             }
         }
