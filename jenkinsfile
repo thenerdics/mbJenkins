@@ -1,4 +1,4 @@
-job('after tests') {
+stage('after tests') {
     triggers {
         upstream('test', 'SUCCESS')
     }
