@@ -6,7 +6,10 @@ pipeline {
         stage('MESSAGE') {
             steps {
                 script{
-                    ./message.sh "mani"
+                    sh'''
+                    env.name = "mani"
+                    ./message.sh
+                    '''
                 }
             }
         }
