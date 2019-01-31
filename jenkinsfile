@@ -3,7 +3,14 @@
 pipeline {
     agent any
     stages {
-            stage('first') {
+        stage('MESSAGE') {
+            steps {
+                sh'''
+                ./message.sh "mani"
+                '''
+            }
+        }
+        stage('TEST') {
             steps {
                 sh'''
                 ./test.sh "mani"
