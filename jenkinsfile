@@ -1,5 +1,4 @@
 node {
-    stages {
    stage('checkout') {
        steps {
             git credentialsId: 'jenkins', 
@@ -13,5 +12,4 @@ node {
             sh "echo ${GIT_BRANCH}"
         }
     }       
-}
 }
