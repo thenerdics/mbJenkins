@@ -5,9 +5,9 @@ pipeline {
     stages {
         stage('MESSAGE') {
             steps {
-                sh'''
-                ./message.sh "mani"
-                '''
+                script{
+                    ./message.sh "mani"
+                }
             }
         }
         stage('TEST') {
