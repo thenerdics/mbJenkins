@@ -16,7 +16,7 @@ pipeline {
         stage('TEST') {
             steps {
                 sh'''
-                ./test.sh $name
+                ./test.sh
                 '''
             }
         }
