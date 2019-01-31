@@ -1,25 +1,5 @@
-
-
-pipeline {
-    agent any
-    stages {
-        stage('MESSAGE') {
-            steps {
-                script{
-                    env.name = "mani"
-                    sh'''
-                    ./message.sh "mani"
-                    '''
-                }
-            }
-        }
-        stage('TEST') {
-            steps {
-                sh'''
-                ./test.sh
-                '''
-            }
-        }
+job('after tests') {
+    triggers {
+        upstream('test', 'SUCCESS')
     }
-    
 }
