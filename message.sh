@@ -5,4 +5,4 @@ echo '
     "hello": "'$1'"
 }'
 
-export $1
+export name=$1
