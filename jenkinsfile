@@ -1,6 +1,6 @@
-node {
+node('ANY') {
     stage('test3') {
-        if (env.BRANCH_NAME != NULL) {
+        if (env.BRANCH_NAME) {
             echo ${env.BRANCH_NAME}
         } else {
             echo 'I execute elsewhere'
