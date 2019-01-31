@@ -1,10 +1,12 @@
-def message = "mani-*"
 
-pipelineJob('example') {
-    definition {
-        cps {
-            script(readFileFromWorkspace('test.sh'))
-            sandbox()
+
+pipeline {
+    agent any
+    stage('first') {
+        steps {
+            sh'''
+            ls
+            '''
         }
     }
 }
