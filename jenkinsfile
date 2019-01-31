@@ -1,27 +1,10 @@
 def message = "mani-*"
 
-pipeline {
-    agent any
-    stages {
-        stage('example') {
-            steps {
-                sh '''
-                message=$( curl 'http://localhost:8080' )
-                echo "Hello $JOB_NAME"
-                message="Hello $JOB_NAME"
-                '''
-                def env.mess = env.message
-            }
-        }
-        stage('pass the message'){
-            steps {
-                    sh "./test.sh $env.mess"
-            }
-        }
-    }
-    post {
-        always {
-            echo "Always post this"
+pipelineJob('example') {
+    definition {
+        cps {
+            script(readFileFromWorkspace('test.sh'))
+            sandbox()
         }
     }
 }
