@@ -1,8 +1,8 @@
 node {
     stage('test3') {
-        echo env.GIT_BRANCH
-        if (env.GIT_BRANCH == 'afterTest') {
-            echo ${env.GIT_BRANCH}
+        echo GIT_BRANCH
+        if (GIT_BRANCH == 'afterTest') {
+            echo ${GIT_BRANCH}
         } else {
             echo 'I execute elsewhere'
         }                        
