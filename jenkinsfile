@@ -5,7 +5,6 @@ def message = "mani-*"
 def groovyTest = load('test.groovy')
 
 node{
-    agent any
     stages {
         stage('example') {
             steps {
