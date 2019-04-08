@@ -4,23 +4,15 @@
 def message = "mani-*"
 def groovyTest = load('test.groovy')
 
-node{
-    stages {
-        stage('example') {
-            steps {
-                sh '''
-                message=$( curl 'http://localhost:8080' )
-                echo "Hello $JOB_NAME"
-                '''
-                script {
-                    groovyTest.validateCommits()
-                }
-            }
-        }
-    }
-    post {
-        always {
-            echo "Always post this"
-        }
+job('example') {
+    stage('notifications') {
+            groovyTest.validateCommits()
+            // notifications {
+            //     endpoint( 'http://localhost:8080/monitor', 'TCP', 'XML') {
+            //         event('started')
+            //         timeout(60)
+            //         logLines(100)
+            //     }
+            // }
     }
 }
