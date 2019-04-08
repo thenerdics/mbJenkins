@@ -1,10 +1,10 @@
 #!/usr/bin/env groovy
 
-def commits = ['mani','3mmi-m','3mmi-me','3mmi-m3','73mmi-m','73mmi-mer','73mmi-tygm'].unique()
 
 
 def call(){
-        
+        List commits = ['mani','3mmi-m','3mmi-me','3mmi-m3','73mmi-m','73mmi-mer','73mmi-tygm'].unique()
+
         // List commits = "git --no-pager log --pretty=format:'%an:%s'".execute().text.tokenize("\n").unique()
         (matches,nonMatches) = commits.split{ it =~ regex }
 
@@ -19,8 +19,8 @@ def call(){
     return matches
 } 
 
-def regex = '.*:'
-def matches = validateCommits(-6, regex = regex)
-def test = (matches.size() == 0) ? "No matches found" : matches 
-println test
+// def regex = '.*:'
+// def matches = validateCommits(-6, regex = regex)
+// def test = (matches.size() == 0) ? "No matches found" : matches 
+// println test
 
