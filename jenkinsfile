@@ -6,7 +6,7 @@ node{
     stage('notifications') {
 
             def message = "mani-*"
-            def groovyTest = load('test.groovy')
+            def groovyTest = load('./test.groovy')
             groovyTest.validateCommits()
             // notifications {
             //     endpoint( 'http://localhost:8080/monitor', 'TCP', 'XML') {
