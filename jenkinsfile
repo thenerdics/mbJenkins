@@ -1,11 +1,12 @@
 #!/usr/bin/env groovy
 
 
-def message = "mani-*"
-def groovyTest = load('test.groovy')
 
 job('example') {
     stage('notifications') {
+
+            def message = "mani-*"
+            def groovyTest = load('test.groovy')
             groovyTest.validateCommits()
             // notifications {
             //     endpoint( 'http://localhost:8080/monitor', 'TCP', 'XML') {
