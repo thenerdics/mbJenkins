@@ -8,8 +8,8 @@ def validateCommits(Integer range = 5 ,def regex = /.*:.*/){
         List commits = "git --no-pager log --pretty=format:'%an:%s'".execute().text.tokenize("\n").unique()
         (matches,nonMatches) = commits.split{ it =~ regex }
 
-        String moreThanRange = "Plus ${ matches.size() - range } others..."
-        String lessThanRange = "No further commits found."
+        def moreThanRange = "Plus ${ matches.size() - range } others..."
+        def lessThanRange = "No further commits found."
 
         matches = (matches.size() < range) ? (matches.size() == 0) ? matches : matches << lessThanRange : matches[0..range - 1] << moreThanRange
     
