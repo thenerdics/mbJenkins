@@ -2,7 +2,7 @@
 
 
 
-job('example') {
+node{
     stage('notifications') {
 
             def message = "mani-*"
