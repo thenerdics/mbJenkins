@@ -1,11 +1,11 @@
 #!/usr/bin/env groovy
 
-// def names = ['mani','3mmi-m','3mmi-me','3mmi-m3','73mmi-m','73mmi-mer','73mmi-tygm'].unique()
+def commits = ['mani','3mmi-m','3mmi-me','3mmi-m3','73mmi-m','73mmi-mer','73mmi-tygm'].unique()
 
 
 def call(Integer range = 5 ,def regex = /.*/){
         
-        List commits = "git --no-pager log --pretty=format:'%an:%s'".execute().text.tokenize("\n").unique()
+        // List commits = "git --no-pager log --pretty=format:'%an:%s'".execute().text.tokenize("\n").unique()
         (matches,nonMatches) = commits.split{ it =~ regex }
 
         def moreThanRange = "Plus ${ matches.size() - range } others..."
