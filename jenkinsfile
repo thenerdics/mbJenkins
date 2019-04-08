@@ -3,6 +3,7 @@ def groovyTest = load('./test.groovy')
 
 pipeline {
     agent any
+    node('test'){
     stages {
         stage('example') {
             steps {
@@ -20,5 +21,6 @@ pipeline {
         always {
             echo "Always post this"
         }
+    }
     }
 }
