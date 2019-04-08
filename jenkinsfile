@@ -1,9 +1,11 @@
+#!/usr/bin/env groovy
+
+
 def message = "mani-*"
-def groovyTest = load('./test.groovy')
+def groovyTest = load('test.groovy')
 
 pipeline {
     agent any
-    node{
     stages {
         stage('example') {
             steps {
@@ -21,6 +23,5 @@ pipeline {
         always {
             echo "Always post this"
         }
-    }
     }
 }
