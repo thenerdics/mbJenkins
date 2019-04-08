@@ -1,4 +1,5 @@
 def message = "mani-*"
+def groovyTest = load('test.groovy')
 
 pipeline {
     agent any
@@ -9,8 +10,7 @@ pipeline {
                 message=$( curl 'http://localhost:8080' )
                 echo "Hello $JOB_NAME"
                 '''
-                sh "echo ${message}"
-                sh "./test.sh ${message}"
+                groovyTest.validateCommits()
             }
         }
     }
