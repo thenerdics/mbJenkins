@@ -3,7 +3,7 @@
 
 
 def call(){
-        List commits = ['mani','3mmi-m','3mmi-me','3mmi-m3','73mmi-m','73mmi-mer','73mmi-tygm'].unique()
+        def commits = ['mani','3mmi-m','3mmi-me','3mmi-m3','73mmi-m','73mmi-mer','73mmi-tygm'].unique()
 
         // List commits = "git --no-pager log --pretty=format:'%an:%s'".execute().text.tokenize("\n").unique()
         (matches,nonMatches) = commits.split{ it =~ regex }
