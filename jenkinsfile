@@ -3,7 +3,7 @@ def groovyTest = load('./test.groovy')
 
 pipeline {
     agent any
-    node('test'){
+    node{
     stages {
         stage('example') {
             steps {
